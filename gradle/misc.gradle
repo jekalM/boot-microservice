@@ -2,6 +2,7 @@ apply plugin: 'docker'
 apply plugin: 'com.ofg.uptodate'
 
 task docker(type: Docker) {
+    baseImage "anapsix/alpine-java"
     dependsOn 'build'
     dryRun true
     setEnvironment('CONFIG_FOLDER', '/properties')
